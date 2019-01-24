@@ -2,6 +2,9 @@ option(USE_SYSTEM_BOOST "Should we use the system Boost?" OFF)
 option(USE_SYSTEM_SIOCLIENT "Should we use the system socket.io client?" OFF)
 option(USE_SYSTEM_PROTOBUF "Should we use the system protobuf?" OFF)
 
+set(Boost_INCLUDE_DIR /usr/include)
+set(Boost_LIBRARY_DIR /usr/lib64)
+
 if(USE_SYSTEM_BOOST)
   find_package(Boost COMPONENTS date_time random system REQUIRED)
   list(APPEND GameLiftServerSdk_THIRDPARTYLIBS_ARGS
